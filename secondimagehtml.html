@@ -28,8 +28,23 @@
 				    right: 0px;
 }
 </style>
+  <title>Veera's Demo</title>
+	<script type="text/javascript">
+		function display_c(){
+			var refresh=1000; // Refresh rate in milli seconds
+			mytime=setTimeout('display_ct()',refresh)
+		}
+
+function display_ct() {
+	var x = new Date()
+	var x1=x.getMonth() +1 + "/" + x.getDate() + "/" + x.getFullYear();
+	x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
+	document.getElementById('ct').innerHTML = x1;
+	display_c();
+	 }
+	</script>
 	</head>
-	<body>
+	<body onload=display_ct();>
 
 		<article class="all-browsers">
 			    <h1>Hello from &emsp; <img alt="Qries" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Pluto_TV_2020_logo.svg/250px-Pluto_TV_2020_logo.svg.png"
@@ -40,15 +55,14 @@
 					      </div>
 					        <article class="browser">
 							    <h2>Date and Time</h2>
-							        <script type="text/javascript">
-									    var myDate = new Date();
-    document.write(myDate);
-    </script>
-      </article>
-        <article class="browser">
-		    <h2>Hostname</h2>
-		        <p>{{hostname}}</p>
-			  </article>
+							        <span id='ct' ></span>
+
+
+								  </article>
+								    <article class="browser">
+									        <h2>Hostname</h2>
+										    <p>{{hostname}}</p>
+										      </article>
 		</article>
 
 	</body>
